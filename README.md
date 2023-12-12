@@ -1,4 +1,4 @@
-# Stripe iOS SDK with custom lables
+# Stripe iOS PaymentSheet SDK with custom lables
 
 * Replace with your local language string in Stripe PaymentSheet 
 * Only works as local SPM package at the moment.
