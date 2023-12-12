@@ -1,4 +1,4 @@
-# Stripe iOS SDK with custom lables
+# Stripe iOS PaymentSheet SDK with custom lables
 Follow Stripe iOS SDK Docs for how to use paymentSheet SDK.
 https://stripe.com/docs/payments/accept-a-payment?platform=ios&ui=payment-sheet
 * Replace with your local language string in Stripe PaymentSheet 
