@@ -15,11 +15,15 @@ import UIKit
 extension PaymentSheetFormFactory {
     func makeCard() -> PaymentMethodElement {
         let isLinkEnabled = offerSaveToLinkWhenSupported && canSaveToLink
-        let saveCheckbox = makeSaveCheckbox(
-            label: String.Localized.save_this_card_for_future_$merchant_payments(
-                merchantDisplayName: configuration.merchantDisplayName
-            )
+        
+        let localizedSaveCheckboxString = String.Localized.save_this_card_for_future_$merchant_payments(
+            merchantDisplayName: configuration.merchantDisplayName
         )
+        
+        let customSaveCheckboxString: String = PaymentSheet.Configuration.customLables["Save this card for future %@ payments"] ?? ""
+        let customSaveCheckboxStringFinal = String(format: customSaveCheckboxString, configuration.merchantDisplayName)
+        
+        let saveCheckbox = makeSaveCheckbox(label: customSaveCheckboxStringFinal)
         let shouldDisplaySaveCheckbox: Bool = saveMode == .userSelectable && !canSaveToLink
 
         // Link can't collect phone.
